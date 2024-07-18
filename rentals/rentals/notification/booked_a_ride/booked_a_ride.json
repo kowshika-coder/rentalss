@@ -1,0 +1,28 @@
+{
+ "attach_print": 0,
+ "channel": "System Notification",
+ "creation": "2024-07-10 12:12:17.428035",
+ "days_in_advance": 0,
+ "docstatus": 0,
+ "doctype": "Notification",
+ "document_type": "Ride Order",
+ "enabled": 1,
+ "event": "Submit",
+ "idx": 0,
+ "is_standard": 1,
+ "message": "<p>whohoooooooooooooooooooo</p>\n",
+ "message_type": "Markdown",
+ "modified": "2024-07-10 12:32:07.811886",
+ "modified_by": "Administrator",
+ "module": "Rentals",
+ "name": "Booked a Ride",
+ "owner": "Administrator",
+ "recipients": [
+  {
+   "receiver_by_role": "All"
+  }
+ ],
+ "send_system_notification": 0,
+ "send_to_all_assignees": 0,
+ "subject": "{{doc.customer_name}} Booked a vehicle!!!!"
+}

@@ -102,9 +102,9 @@ app_license = "mit"
 # -----------
 # Permissions evaluated in scripted ways
 
-# permission_query_conditions = {
-# 	"Event": "frappe.desk.doctype.event.event.get_permission_query_conditions",
-# }
+permission_query_conditions = {
+	"Vehicle": "rentals.api.get_query_condition",
+}
 #
 # has_permission = {
 # 	"Event": "frappe.desk.doctype.event.event.has_permission",
@@ -123,33 +123,36 @@ app_license = "mit"
 # Hook on document methods and events
 
 # doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
+# 	"ToDo": {
+# 		"before_insert": "rentals.api.throw_emoji",
 # 	}
 # }
 
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
-# 	"all": [
-# 		"rentals.tasks.all"
-# 	],
-# 	"daily": [
-# 		"rentals.tasks.daily"
-# 	],
-# 	"hourly": [
-# 		"rentals.tasks.hourly"
-# 	],
-# 	"weekly": [
-# 		"rentals.tasks.weekly"
-# 	],
-# 	"monthly": [
-# 		"rentals.tasks.monthly"
-# 	],
-# }
+scheduler_events = {
+	# "all": [
+	# 	"rentals.tasks.all"
+	# ],
+	# "daily": [
+	# 	"rentals.tasks.daily"
+	# ],
+	# "hourly": [
+	# 	"rentals.tasks.hourly"
+	# ],
+	# "weekly": [
+	# 	"rentals.api.send_emoji_mail"
+	# ],
+    "Cron":{
+        "30 3 * * 3":[
+            "rentals.api.send_emoji_mail" #send every wednesday at 3:30pm
+        ]
+    }
+	# "monthly": [
+	# 	"rentals.tasks.monthly"
+	# ],
+}
 
 # Testing
 # -------
